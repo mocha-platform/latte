@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolicyAdmin>
+	<Quote>
+		<Event id="quoteEvent" description="init landing page authority ">
+			<step id="policyDateCheckStep" />
+			<step id="policyCalculateStep" />
+		</Event>
+	</Quote>
+</PolicyAdmin>
