@@ -1,0 +1,13 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="SearchConfig"
+	maxBytesLocalHeap="64M">
+	<cache name="hello-world" />
+	<cache name="crud" />
+	<cache name="search">
+		<searchable>
+			<searchAttribute name="height" />
+			<searchAttribute name="weight" />
+			<searchAttribute name="bodyMassIndex" />
+		</searchable>
+	</cache>
+</ehcache>

@@ -1,0 +1,7 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="CRUDConfig"
+	maxBytesLocalHeap="64M">
+	<cache name="hello-world" />
+	<cache name="crud" 
+		transactionalMode="local"/>
+</ehcache>

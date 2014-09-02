@@ -1,0 +1,43 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="SampleConfig"
+	maxBytesLocalHeap="64M">
+	<cache name="hello-world" />
+	<cache name="crud" />
+	<cache name="search">
+		<searchable>
+			<searchAttribute name="height" />
+			<searchAttribute name="weight" />
+			<searchAttribute name="bodyMassIndex" />
+		</searchable>
+	</cache>
+	<cache name="sort">
+		<searchable>
+			<searchAttribute name="height" />
+			<searchAttribute name="weight" />
+		</searchable>
+	</cache>
+	<cache name="group">
+		<searchable>
+			<searchAttribute name="height" />
+			<searchAttribute name="gender" />
+			<searchAttribute name="bmi" expression="value.getBodyMassIndex()" />
+		</searchable>
+	</cache>
+	<cache name="server-array">
+		<searchable>
+			<searchAttribute name="height" />
+			<searchAttribute name="gender" />
+			<searchAttribute name="bmi" expression="value.getBodyMassIndex()" />
+		</searchable>
+		<!-- Add the terracotta element to this cache. This causes this data set 
+			to be managed by the Terracotta server array. For the purposes of demonstration, 
+			we set the consistency to "strong" to ensure that data is always consistent 
+			across the entire distributed system. There are other consistency settings 
+			that may be more suitable for different data sets and applications. -->
+		<terracotta consistency="strong" />
+	</cache>
+	<!-- Add the terracottaConfig element to specify where to find the configuration 
+		specific to the server array. In this case, the configuration is retrieved 
+		from the server array itself. -->
+	<terracottaConfig url="localhost:9510" />
+</ehcache>
